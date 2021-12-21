@@ -18,7 +18,7 @@ function Module(param) {
           Add to Schedule
         </button>
         { openModal && <Modal />}
-        { openModal && <Backdrop onClick={closeModal}/>}
+        { openModal && <Backdrop onCancel={closeModal}/>}
       </div>
     </div>
   );
