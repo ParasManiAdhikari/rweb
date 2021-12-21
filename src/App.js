@@ -3,9 +3,9 @@ function App() {
   return (
     <div>
       <h1>My Modules</h1>
-      <Module />
-      <Module />
-      <Module />
+      <Module text = "Softwaretechnik"/>
+      <Module text = "Betriebsystem"/>
+      <Module text = "Verteilte Systeme"/>
     </div>
   );
 }

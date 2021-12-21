@@ -1,9 +1,24 @@
-function Module() {
+import { useState } from "react";
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
+
+function Module(param) {
+  const [ openModal, setModalBoolean ] = useState(false);
+  function addSch() {
+    setModalBoolean(true);
+  }
+  function closeModal(){
+      setModalBoolean(false);
+  }
   return (
     <div className="card">
-      <h2>Module 1</h2>
+      <h2>{param.text}</h2>
       <div className="actions">
-        <button className="btn">Add to Schedule</button>
+        <button className="btn" onClick={addSch}>
+          Add to Schedule
+        </button>
+        { openModal && <Modal />}
+        { openModal && <Backdrop onClick={closeModal}/>}
       </div>
     </div>
   );
