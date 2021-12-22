@@ -3,12 +3,12 @@ import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
 function Module(param) {
-  const [ openModal, setModalBoolean ] = useState(false);
+  const [openModal, setModalBoolean] = useState(false);
   function addSch() {
     setModalBoolean(true);
   }
-  function closeModal(){
-      setModalBoolean(false);
+  function closeModal() {
+    setModalBoolean(false);
   }
   return (
     <div className="card">
@@ -17,8 +17,8 @@ function Module(param) {
         <button className="btn" onClick={addSch}>
           Add to Schedule
         </button>
-        { openModal && <Modal />}
-        { openModal && <Backdrop onCancel={closeModal}/>}
+        {openModal && <Modal onCancel={closeModal} onConfirm={closeModal} />}
+        {openModal && <Backdrop onCancel={closeModal} />}
       </div>
     </div>
   );
